@@ -1,16 +1,23 @@
 package com.example.avatar
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 class Avatar : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,14 +36,26 @@ fun AvatarScreen() {
     var showMulut by remember { mutableStateOf(true) }
 
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = "Avatar",
-            style = MaterialTheme.typography.headlineLarge,
-            modifier = Modifier.padding(16.dp)
-        )
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(color = Color.LightGray),
+            contentAlignment = Alignment.BottomStart
+        ) {
+            Text(
+                text = "AvataRawr",
+                color = Color.Black,
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .padding(16.dp)
+            )
+        }
+
         Box(
             modifier = Modifier
                 .weight(1f)
